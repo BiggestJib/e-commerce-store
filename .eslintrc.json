@@ -3,12 +3,18 @@
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
   "rules": {
-    "@typescript-eslint/no-unused-vars": "warn", // Warn on unused variables
-    "no-unused-vars": "off", // Disable vanilla JS rule
-    "@typescript-eslint/explicit-module-boundary-types": "off", // Don't require explicit return types
-    "@typescript-eslint/no-explicit-any": "off", // Disable rule to allow 'any' globally
-    "no-console": "off", // Allow console logs
-    "no-debugger": "off", // Allow debugger statements
-    "react/no-unescaped-entities": "off" // Disable unescaped entity check globally
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { "argsIgnorePattern": "^_" }
+    ], // Ignore unused variables starting with an underscore
+    "@typescript-eslint/no-explicit-any": "off", // Disable 'any' warnings globally
+    "@typescript-eslint/explicit-module-boundary-types": "off", // Disable requiring explicit return types
+    "no-console": "off", // Allow console logs globally
+    "no-debugger": "off", // Allow debugger globally
+    "react/no-unescaped-entities": "off", // Allow unescaped entities
+    "@typescript-eslint/no-empty-interface": "off", // Disable empty interface warning
+    "no-unused-vars": "off", // Disable the vanilla JS rule, since you're using the TypeScript version,
+    "@typescript-eslint/no-empty-object-type": "off",
+    "no-var": "off"
   }
 }
